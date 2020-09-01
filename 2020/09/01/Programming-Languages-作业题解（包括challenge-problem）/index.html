@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Programming Languages 作业题解（包括challenge problem） | markcty&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言Programming Languages是coursera上的一门神课，主要内容是通过学习三门语言(SML, Racket, Ruby)来了解不同编程语言背后的特性和设计思想，十分值得大一暑假（或学习了一两门语言后）一上。  每周作业大概有十几道题，其中Challenge Problem都很值得一做，所以写了这些题的题解（慢更）。作业所有代码都在GitHub上：  https:&#x2F;&#x2F;githu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Programming Languages 作业题解（包括challenge problem）">
+<meta property="og:url" content="https://github.com/markcty/markcty.github.io.git/2020/09/01/Programming-Languages-%E4%BD%9C%E4%B8%9A%E9%A2%98%E8%A7%A3%EF%BC%88%E5%8C%85%E6%8B%ACchallenge-problem%EF%BC%89/index.html">
+<meta property="og:site_name" content="markcty&#39;s blog">
+<meta property="og:description" content="前言Programming Languages是coursera上的一门神课，主要内容是通过学习三门语言(SML, Racket, Ruby)来了解不同编程语言背后的特性和设计思想，十分值得大一暑假（或学习了一两门语言后）一上。  每周作业大概有十几道题，其中Challenge Problem都很值得一做，所以写了这些题的题解（慢更）。作业所有代码都在GitHub上：  https:&#x2F;&#x2F;githu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200827140624297.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200827140843125.jpg">
+<meta property="article:published_time" content="2020-09-01T02:09:24.000Z">
+<meta property="article:modified_time" content="2020-09-01T02:39:49.421Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200827140624297.png">
+  
+    <link rel="alternate" href="/atom.xml" title="markcty&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">markcty&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/markcty/markcty.github.io.git"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Programming-Languages-作业题解（包括challenge-problem）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/01/Programming-Languages-%E4%BD%9C%E4%B8%9A%E9%A2%98%E8%A7%A3%EF%BC%88%E5%8C%85%E6%8B%ACchallenge-problem%EF%BC%89/" class="article-date">
+  <time datetime="2020-09-01T02:09:24.000Z" itemprop="datePublished">2020-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Programming Languages 作业题解（包括challenge problem）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a target="_blank" rel="noopener" href="https://www.coursera.org/learn/programming-languages/">Programming Languages</a>是coursera上的一门神课，主要内容是通过学习三门语言(SML, Racket, Ruby)来了解不同编程语言背后的特性和设计思想，十分值得大一暑假（或学习了一两门语言后）一上。</p>
+<center><img src="https://img-blog.csdnimg.cn/20200827140624297.png" width="50%"></center>
+每周作业大概有十几道题，其中Challenge Problem都很值得一做，所以写了这些题的题解（慢更）。作业所有代码都在GitHub上：
+
+<p><a href="https://github.com/markcty/Programming-Languages">https://github.com/markcty/Programming-Languages</a></p>
+<a id="more"></a>
+
+<h2 id="Part-A"><a href="#Part-A" class="headerlink" title="Part A"></a>Part A</h2><h3 id="Homework-3"><a href="#Homework-3" class="headerlink" title="Homework 3"></a>Homework 3</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>本周的Challenge Problem很精彩，写完可以了解SML中的类型推断原理。</p>
+<p>Assignment中的题目描述十分简略，看完后不知所云。直接看<a target="_blank" rel="noopener" href="https://www.coursera.org/learn/programming-languages/supplement/FEymH/hints-and-gotchas-for-section-3">Hints and Gotchas</a>，原来是要做case expression的类型推断工作。</p>
+<p>第一个参数描述了自定义datatype，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datatype color &#x3D; Red | Green | Blue</span><br></pre></td></tr></table></figure>
+
+<p>就等同于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[(&quot;Red&quot;,&quot;color&quot;,UnitT),(&quot;Green&quot;,&quot;color&quot;,UnitT),(&quot;Blue&quot;,&quot;color&quot;,UnitT)]</span><br></pre></td></tr></table></figure>
+
+<p>第二个参数描述每个case，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">case x of</span><br><span class="line">        Sedan(a) &#x3D;&gt; 1</span><br><span class="line">      | Truck(b,_) &#x3D;&gt; 2</span><br><span class="line">      | _ &#x3D;&gt; 3</span><br></pre></td></tr></table></figure>
+
+<p>就等同于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ConstructorP(&quot;Sedan&quot;, Variable &quot;a&quot;), ConstructorP(&quot;Truck&quot;, TupleP[Variable &quot;b&quot;, Wildcard]), Wildcard]</span><br></pre></td></tr></table></figure>
+
+<p>值得一提的是，函数应该永远返回更宽容(lenient)的一个typ，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">case x of</span><br><span class="line">	(x, y) &#x3D;&gt; 1</span><br></pre></td></tr></table></figure>
+
+<p>尽管x的typ可以是TupleT[IntT, IntT]，但更宽容的typ应该是TupleT[Anything, Anything]</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>不难得到以下大致思路，先获得pattern list中的每个pattern的typ，然后挨个比较typ，得到宽容程度最大的typ</p>
+<p>具体为以下两个函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fun narrow(t0, t1) &#x3D;</span><br><span class="line">            case (t0, t1) of</span><br><span class="line">                (Anything, _) &#x3D;&gt; t1</span><br><span class="line">              | (_, Anything) &#x3D;&gt; t0</span><br><span class="line">              | (UnitT, UnitT) &#x3D;&gt; UnitT</span><br><span class="line">              | (IntT, IntT) &#x3D;&gt; IntT</span><br><span class="line">              | (Datatype s0, Datatype s1) &#x3D;&gt; if s0 &#x3D; s1 then Datatype s0 else raise NarrowFailed</span><br><span class="line">              | (TupleT t0s, TupleT t1s) &#x3D;&gt; (TupleT(map (fn(t0, t1) &#x3D;&gt; narrow(t0, t1)) (ListPair.zipEq(t0s, t1s))) handle UnequalLenths &#x3D;&gt; raise NarrowFailed) </span><br></pre></td></tr></table></figure>
+
+<p>narrow函数比较两个typ并返回宽容程度，在处理TupleT时，用到了第11题的技巧，将两个typ list打包，然后narrow每一组的typ。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fun get_typ p &#x3D; case p of</span><br><span class="line">                     Wildcard &#x3D;&gt; Anything</span><br><span class="line">                   | Variable _ &#x3D;&gt; Anything</span><br><span class="line">                   | UnitP &#x3D;&gt; UnitT</span><br><span class="line">                   | ConstP _ &#x3D;&gt; IntT</span><br><span class="line">                   | TupleP ps&#39; &#x3D;&gt; TupleT(map (fn p &#x3D;&gt; get_typ p) ps&#39;)</span><br><span class="line">                   | ConstructorP(c, p) &#x3D;&gt;</span><br><span class="line">                       (case (List.find (fn (c&#39;, _, _) &#x3D;&gt; c&#39; &#x3D; c) ds) of</span><br><span class="line">                            NONE &#x3D;&gt; raise NoConstructor</span><br><span class="line">                          | SOME(_, d, t) &#x3D;&gt; let val _ &#x3D; narrow(get_typ p, t) in Datatype d end)</span><br></pre></td></tr></table></figure>
+
+<p>get_typ函数用于获得每个pattern的typ，这里要注意如果pattern是自定义的datatype，要先于自定义datatype列表根据constructor函数名找到那个datatype，然后得到输入的typ，与datatype中规定的typ比较，如果符合，就返回这个自定义类型。这里为了方便，直接借用了narrow函数比较（因为如果不符合，会直接扔出exception）。</p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><p>为了调试方便，定义了两种不同exception。</p>
+<p>看似复杂的类型推断，在sml中用了仅仅30行不到的代码，更是包含了课程中所学的map，find，fold的高阶函数，函数式编程果然精妙。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">fun typecheck_patterns(ds, ps) &#x3D;</span><br><span class="line">    let</span><br><span class="line">        exception NarrowFailed;</span><br><span class="line">        exception NoConstructor;</span><br><span class="line">        fun narrow(t0, t1) &#x3D;</span><br><span class="line">            case (t0, t1) of</span><br><span class="line">                (Anything, _) &#x3D;&gt; t1</span><br><span class="line">              | (_, Anything) &#x3D;&gt; t0</span><br><span class="line">              | (UnitT, UnitT) &#x3D;&gt; UnitT</span><br><span class="line">              | (IntT, IntT) &#x3D;&gt; IntT</span><br><span class="line">              | (Datatype s0, Datatype s1) &#x3D;&gt; if s0 &#x3D; s1 then Datatype s0 else raise NarrowFailed</span><br><span class="line">              | (TupleT t0s, TupleT t1s) &#x3D;&gt; (TupleT(map (fn(t0, t1) &#x3D;&gt; narrow(t0, t1)) (ListPair.zipEq(t0s, t1s))) handle UnequalLenths &#x3D;&gt; raise NarrowFailed) </span><br><span class="line">              | _ &#x3D;&gt; raise NarrowFailed;</span><br><span class="line">        fun get_typ p &#x3D; case p of</span><br><span class="line">                            Wildcard &#x3D;&gt; Anything</span><br><span class="line">                          | Variable _ &#x3D;&gt; Anything</span><br><span class="line">                          | UnitP &#x3D;&gt; UnitT</span><br><span class="line">                          | ConstP _ &#x3D;&gt; IntT</span><br><span class="line">                          | TupleP ps&#39; &#x3D;&gt; TupleT(map (fn p &#x3D;&gt; get_typ p) ps&#39;)</span><br><span class="line">                          | ConstructorP(c, p) &#x3D;&gt;</span><br><span class="line">                            (case (List.find (fn (c&#39;, _, _) &#x3D;&gt; c&#39; &#x3D; c) ds) of</span><br><span class="line">                                 NONE &#x3D;&gt; raise NoConstructor</span><br><span class="line">                               | SOME(_, d, t) &#x3D;&gt; let val _ &#x3D; narrow(get_typ p, t) in Datatype d end)</span><br><span class="line">        val get_ans &#x3D; List.foldl (fn(p, acc) &#x3D;&gt; narrow(get_typ p, acc)) Anything</span><br><span class="line">    in</span><br><span class="line">        SOME(get_ans ps) handle NarrowFailed &#x3D;&gt; let val _ &#x3D; print &quot;Narrow Failed!\n&quot; in NONE end</span><br><span class="line">                          | NoConstructor &#x3D;&gt; let val _ &#x3D; print &quot;No Such Constructor!\n&quot; in NONE end</span><br><span class="line">    end;</span><br></pre></td></tr></table></figure>
+<center><img src="https://img-blog.csdnimg.cn/20200827140843125.jpg" width="30%"></center>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/markcty/markcty.github.io.git/2020/09/01/Programming-Languages-%E4%BD%9C%E4%B8%9A%E9%A2%98%E8%A7%A3%EF%BC%88%E5%8C%85%E6%8B%ACchallenge-problem%EF%BC%89/" data-id="ckejcim3c0000clwgbhzthksi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/1970/01/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">一月 1970</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/01/Programming-Languages-%E4%BD%9C%E4%B8%9A%E9%A2%98%E8%A7%A3%EF%BC%88%E5%8C%85%E6%8B%ACchallenge-problem%EF%BC%89/">Programming Languages 作业题解（包括challenge problem）</a>
+          </li>
+        
+          <li>
+            <a href="/1970/01/01/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
